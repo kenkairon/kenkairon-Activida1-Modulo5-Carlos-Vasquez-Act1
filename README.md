@@ -14,7 +14,7 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
     
 📸 *Vista de los Screenshots:*  
 
-![screenshots](./screenshots/Usuario_accede_con_credenciales_v_lidas.png)
+![screenshots]("./screenshots/Usuario_accede_con_credenciales_v_lidas.png")
 
 
 ---
