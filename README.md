@@ -24,9 +24,11 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
 - Visual Studio Code
 
 ---
-## 🛠️ Integrante
+
+## 👤 Integrante
 
 - Carlos Vasquez
+
 ---
 
 ## 📦 Configuración
@@ -65,16 +67,3 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
     <artifactId>junit-jupiter</artifactId>
     <version>5.10.0</version>
 </dependency>
-
-# ✅ Escenario de Prueba (login.feature)
-````gherkin
-Feature: Inicio de sesión
-
-  Scenario: Usuario accede con credenciales válidas
-    Given que el usuario está en la página de login
-    When ingresa usuario "admin" y clave "admin123"
-    Then debería ver el mensaje "Bienvenido, admin"
-
-# ▶️ Ejecución
-````bash
-mvn test
