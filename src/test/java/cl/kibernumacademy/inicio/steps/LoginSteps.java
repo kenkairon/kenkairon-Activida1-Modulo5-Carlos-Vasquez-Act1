@@ -2,9 +2,19 @@ package cl.kibernumacademy.inicio.steps;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import cl.kibernumacademy.inicio.pages.LoginPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -27,7 +37,7 @@ public class LoginSteps {
   @After
   public void tearDown() {
     if (driver != null) {
-      // driver.quit();
+      driver.quit();
     }
   }
 
@@ -48,6 +58,36 @@ public class LoginSteps {
     assertTrue(welcomeMessage.contains(mensaje),
         "Mensaje esperado: " + mensaje + ", pero se obtuvo: " + welcomeMessage);
 
+  }
+
+  @After
+  public void takeScreenshot(io.cucumber.java.Scenario scenario) throws IOException {
+    if (driver != null) {
+      try {
+        // Crear carpeta si no existe
+        Path screenshotsDir = Paths.get("screenshots");
+        if (!Files.exists(screenshotsDir)) {
+          Files.createDirectories(screenshotsDir);
+        }
+
+        // Tomar screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        // Nombre del archivo basado en el nombre del escenario
+        String screenshotName = scenario.getName().replaceAll("[^a-zA-Z0-9.-]", "_") + ".png";
+
+        // Guardar screenshot
+        Files.copy(
+            screenshot.toPath(),
+            screenshotsDir.resolve(screenshotName),
+            StandardCopyOption.REPLACE_EXISTING);
+      } catch (Exception e) {
+        System.err.println("No se pudo tomar o guardar el screenshot: " + e.getMessage());
+      } finally {
+        // Ahora cerramos el navegador
+        driver.quit();
+      }
+    }
   }
 
 }
