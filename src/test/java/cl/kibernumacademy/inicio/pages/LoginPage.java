@@ -11,6 +11,7 @@ public class LoginPage {
   private By passwordField = By.id("password");
   private By loginMessage = By.id("login-message");
   private By loginButton = By.cssSelector("button[type='submit']");
+  private By welcomeMessage = By.cssSelector("#menu-section h2");
 
   public LoginPage(WebDriver driver) {
     this.driver = driver;
@@ -29,7 +30,7 @@ public class LoginPage {
   }
 
   public String getWelcomeMessage() {
-    return driver.findElement(By.id("welcome-message")).getText();
+    return driver.findElement(welcomeMessage).getText();
   }
 
   public String getLoginMessage() {
@@ -37,4 +38,9 @@ public class LoginPage {
     return message.getText();
   }
   
+  public void login(String username, String password) {
+    enterUsername(username);
+    enterPassword(password);
+    clickLoginButton();
+  }
 }
