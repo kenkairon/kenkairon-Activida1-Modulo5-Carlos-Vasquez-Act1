@@ -2,12 +2,14 @@ package cl.kibernumacademy.inicio.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage {
   private WebDriver driver;
   // Localizadores
   private By usernameField = By.id("username");
   private By passwordField = By.id("password");
+  private By loginMessage = By.id("login-message");
   private By loginButton = By.cssSelector("button[type='submit']");
 
   public LoginPage(WebDriver driver) {
@@ -28,6 +30,11 @@ public class LoginPage {
 
   public String getWelcomeMessage() {
     return driver.findElement(By.id("welcome-message")).getText();
+  }
+
+  public String getLoginMessage() {
+    WebElement message = driver.findElement(loginMessage);
+    return message.getText();
   }
   
 }
