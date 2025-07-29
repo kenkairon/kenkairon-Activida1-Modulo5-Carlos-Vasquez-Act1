@@ -12,6 +12,10 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
 - `src/test/java/pages/LoginPage.java` → Clase Page Object con métodos y selectores.  
 - `src/test/java/runner/RunCucumberTest.java` → Clase para ejecutar las pruebas.
 
+📸 *Vista de los Screenshots:*  
+![ScreenShots](screenshots/Usuario_accede_con_credenciales_v_lidas.png)
+
+
 ---
 
 ## 🛠️ Tecnologías Usadas
@@ -67,3 +71,5 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
     <artifactId>junit-jupiter</artifactId>
     <version>5.10.0</version>
 </dependency>
+
+
