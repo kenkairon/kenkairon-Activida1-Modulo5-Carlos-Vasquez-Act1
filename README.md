@@ -13,7 +13,7 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
 - `src/test/java/runner/RunCucumberTest.java` → Clase para ejecutar las pruebas.
 
 📸 *Vista de los Screenshots:*  
-![ScreenShots](screenshots/Usuario_accede_con_credenciales_v_lidas.png)
+![screenshots](./screenshots/Usuario_accede_con_credenciales_v_lidas.png)
 
 
 ---
