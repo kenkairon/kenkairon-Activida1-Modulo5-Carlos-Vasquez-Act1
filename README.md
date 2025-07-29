@@ -8,14 +8,17 @@ Automatizar un escenario funcional completo utilizando **Cucumber** y **Selenium
 ## 📁 Estructura del Proyecto
 
 - `src/test/resources/features/login.feature` → Archivo `.feature` con el escenario de inicio de sesión.  
-- `src/test/java/steps/LoginSteps.java` → Implementación de pasos con Selenium.  
+- `src/test/java/steps/LoginSteps.java` → Implementación de los pasos con Selenium.  
 - `src/test/java/pages/LoginPage.java` → Clase Page Object con métodos y selectores.  
 - `src/test/java/runner/RunCucumberTest.java` → Clase para ejecutar las pruebas.
-    
-📸 *Vista de los Screenshots:*  
 
-![screenshots]("./screenshots/Usuario_accede_con_credenciales_v_lidas.png")
+---
 
+## 📸 Captura de Pantalla
+
+Vista del escenario ejecutado con credenciales válidas:
+
+![Screenshot del escenario](./screenshots/Usuario_accede_con_credenciales_v_lidas.png)
 
 ---
 
